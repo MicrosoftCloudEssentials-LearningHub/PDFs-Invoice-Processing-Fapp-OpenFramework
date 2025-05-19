@@ -9,14 +9,6 @@ Last updated: 2025-05-19
 
 ----------
 
-<div align="center">
-  <img src="" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
-
-<div align="center">
-  <img src="" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
-
 ## Overview 
 
 Templates structure:
