@@ -12,7 +12,6 @@ Last updated: 2025-05-20
 
 ----------
 
-
 <details>
 <summary><b>List of References</b> (Click to expand)</summary>
 
@@ -30,21 +29,21 @@ Last updated: 2025-05-20
 - [Where to start?](#where-to-start)
 - [Important Considerations for Production Environment](#important-considerations-for-production-environment)
 - [Overview](#overview)
-    - [Function App Hosting Options](#function-app-hosting-options)
+  - [Function App Hosting Options](#function-app-hosting-options)
 - [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
 - [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
 - [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
 - [Step 4: Set Up Azure Functions for Document Ingestion and Processing](#step-4-set-up-azure-functions-for-document-ingestion-and-processing)
-    - [Create a Function App](#create-a-function-app)
-    - [Configure/Validate the Environment variables](#configurevalidate-the-environment-variables)
-    - [Develop the Function](#develop-the-function)
+  - [Create a Function App](#create-a-function-app)
+  - [Configure/Validate the Environment variables](#configurevalidate-the-environment-variables)
+  - [Develop the Function](#develop-the-function)
 - [Step 5: Test the solution](#step-5-test-the-solution)
 
 </details>
 
-
 > [!NOTE]
 > Limitations of this approach: <br/>
+>
 > - Requires significant manual effort to structure and format extracted data. <br/>
 > - Limited in handling complex layouts and non-text elements like images and charts. <br/>
 
@@ -107,8 +106,8 @@ Last updated: 2025-05-20
 - An `Azure subscription is required`. All other resources, including instructions for creating a Resource Group, are provided in this workshop.
 - `Contributor role assigned or any custom role that allows`: access to manage all resources, and the ability to deploy resources within subscription.
 - If you choose to use the Terraform approach, please ensure that:
-    -  [Terraform is installed on your local machine](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli#install-terraform).
-    -  [Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) to work with both Terraform and Azure commands.
+  - [Terraform is installed on your local machine](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli#install-terraform).
+  - [Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) to work with both Terraform and Azure commands.
 
 ## Where to start? 
 
@@ -125,6 +124,7 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
 ## Overview 
 
 > Using Cosmos DB provides you with a flexible, scalable, and globally distributed database solution that can handle both structured and semi-structured data efficiently. <br/>
+>
 > - `Azure Blob Storage`: Store the PDF invoices. <br/>
 > - `Azure Functions`: Trigger on new PDF uploads, extract data, and process it. <br/>
 > - `Azure SQL Database or Cosmos DB`: Store the extracted data for querying and analytics. <br/> 
@@ -211,7 +211,7 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
 
 ## Step 3: Set Up Azure Cosmos DB
 
-> `Azure Cosmos DB` is a globally distributed,` multi-model database service provided by Microsoft Azure`. It is designed to offer high availability, scalability, and low-latency access to data for modern applications. Unlike traditional relational databases, Cosmos DB is a `NoSQL database, meaning it can handle unstructured, semi-structured, and structured data types`. `It supports multiple data models, including document, key-value, graph, and column-family, making it versatile for various use cases.` <br/> <br/>
+> `Azure Cosmos DB` is a globally distributed,`multi-model database service provided by Microsoft Azure`. It is designed to offer high availability, scalability, and low-latency access to data for modern applications. Unlike traditional relational databases, Cosmos DB is a `NoSQL database, meaning it can handle unstructured, semi-structured, and structured data types`. `It supports multiple data models, including document, key-value, graph, and column-family, making it versatile for various use cases.` <br/> <br/>
 > An `Azure Cosmos DB container` is a `logical unit` within a Cosmos DB database where data is stored. `Containers are schema-agnostic, meaning they can store items with different structures. Each container is automatically partitioned to scale out across multiple servers, providing virtually unlimited throughput and storage`. Containers are the primary scalability unit in Cosmos DB, and they use a partition key to distribute data efficiently across partitions.
 
 1. **Create a Cosmos DB Account**:
@@ -320,7 +320,6 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
     
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/4c19d70e-d525-4c15-bb0e-518f50f61b37">
     
-
 3. **Get Cosmos DB Account ID**: Run this command to get the ID of your Cosmos DB account. Record the value of the `id` property as it is required for the next step.
 
      ```powershell
@@ -372,9 +371,9 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
 
 - Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
 
- -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
- -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
- -  `contosostorageaidemo_STORAGE`: Your Storage Account connection string.
+- `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
+- `COSMOS_DB_KEY`: Your Cosmos DB account key.
+- `contosostorageaidemo_STORAGE`: Your Storage Account connection string.
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
 
@@ -382,7 +381,7 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
 
- - Click on `Apply` to save your configuration.
+- Click on `Apply` to save your configuration.
 
 ### Develop the Function
 
@@ -448,9 +447,9 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
  > 3. **Data Extraction**: The extracted text is processed to extract invoice data. The `generate_id` function generates a unique ID for each invoice. <br/>
  > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container. 
 
- > `pdfminer.six` is an open-source framework. It is a community-maintained fork of the original PDFMiner,` designed for extracting and analyzing text data from PDF documents`. The framework is built in a modular way, allowing each component to be easily replaced or extended for various purpose
+ > `pdfminer.six` is an open-source framework. It is a community-maintained fork of the original PDFMiner,`designed for extracting and analyzing text data from PDF documents`. The framework is built in a modular way, allowing each component to be easily replaced or extended for various purpose
 
- - Update the `function_app.py`:
+- Update the `function_app.py`:
 
   | Template Blob Trigger | Function Code updated |
   | --- | --- |
@@ -595,6 +594,7 @@ azure-functions
 pdfminer.six
 azure-cosmos==4.3.0
 ```
+
 - Since this function has already been tested, you can deploy your code to the function app in your subscription. If you want to test, you can use run your function locally for testing.
   - Click on the `Azure` icon.
   - Under `workspace`, click on the `Function App` icon.
