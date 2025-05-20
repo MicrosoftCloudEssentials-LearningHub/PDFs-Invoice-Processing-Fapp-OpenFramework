@@ -9,6 +9,14 @@ Last updated: 2025-05-20
 
 ----------
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/39dd10d6-ae40-4c6d-8ed4-00551f9785c7" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/8705bcff-2942-4e04-bfbc-c2881352f557" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
 ## Overview 
 
 Templates structure:
