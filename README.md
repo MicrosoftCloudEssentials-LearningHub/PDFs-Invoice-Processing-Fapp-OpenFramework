@@ -8,7 +8,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-05-13
+Last updated: 2025-05-20
 
 ----------
 
@@ -114,7 +114,7 @@ Last updated: 2025-05-13
 
 This is an introductory workshop on Microsoft Fabric. Please follow as described below.
 
-- If you're choosing the `Infrastructure via Azure Portal`, please start [here](#step-1-set-up-your-azure-environment).
+- If you're choosing the `Infrastructure via Azure Portal`, please start [here in this section](#step-1-set-up-your-azure-environment).
 - If you're choosing the `Infrastructure via Terraform` approach:
     1. Please follow the [Terraform guide](./terraform-infrastructure/) to deploy the necessary Azure resources for the workshop.
     2. Then, follow each [each section](#step-1-set-up-your-azure-environment) but `skip the creation of each resource`.
@@ -385,6 +385,7 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
  - Click on `Apply` to save your configuration.
 
 ### Develop the Function
+
 - You need to install [VSCode](https://code.visualstudio.com/download)
 - Install python from Microsoft store:
    
@@ -453,7 +454,7 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
 
   | Template Blob Trigger | Function Code updated |
   | --- | --- |
-  |      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a4ac6f2d-1419-4629-8896-de202c76000e"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9e41cd7-9c3f-4da5-8526-5c7f06107a84"> | 
+  | <img width="550" alt="image" src="https://github.com/user-attachments/assets/a4ac6f2d-1419-4629-8896-de202c76000e"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9e41cd7-9c3f-4da5-8526-5c7f06107a84"> | 
 
   ```python
   import azure.functions as func
@@ -587,7 +588,7 @@ This is an introductory workshop on Microsoft Fabric. Please follow as described
 
 | Template `requirements.txt` | Updated `requirements.txt` |
 | --- | --- |
-| <img width="550" alt="image" src="https://github.com/user-attachments/assets/d7dec16e-4f78-446d-a7e0-4d3b1d43bec4"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/b30e6450-515b-4070-b91b-8040ecbde738"> 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/d7dec16e-4f78-446d-a7e0-4d3b1d43bec4"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/b30e6450-515b-4070-b91b-8040ecbde738"> |
 
 ```text
 azure-functions
