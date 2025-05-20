@@ -43,7 +43,6 @@ output "key_vault_name" {
   value       = azurerm_key_vault.keyvault.name
 }
 
-
 output "cosmosdb_account_name" {
   description = "The name of the CosmosDB account."
   value       = azurerm_cosmosdb_account.cosmosdb.name
