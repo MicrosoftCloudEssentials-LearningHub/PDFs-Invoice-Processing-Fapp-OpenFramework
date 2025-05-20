@@ -12,6 +12,9 @@ Last updated: 2025-05-20
 
 ----------
 
+> [!IMPORTANT]
+> This example is based on a `public network site and is intended for demonstration purposes only`. It showcases how several Azure resources can work together to achieve the desired result. Consider the section below about [Important Considerations for Production Environment](#important-considerations-for-production-environment). Please note that `these demos are intended as a guide and are based on my personal experiences. For official guidance, support, or more detailed information, please refer to Microsoft's official documentation or contact Microsoft directly`: [Microsoft Sales and Support](https://support.microsoft.com/contactus?ContactUsExperienceEntryPointAssetId=S.HP.SMC-HOME)
+
 <details>
 <summary><b>List of References</b> (Click to expand)</summary>
 
@@ -40,6 +43,12 @@ Last updated: 2025-05-20
 - [Step 5: Test the solution](#step-5-test-the-solution)
 
 </details>
+
+> How to parse PDFs from an Azure Storage Account, process them using a Open Framework (needs manual configuration), and store the results in Cosmos DB for further analysis. <br/> <br/>
+>
+> 1. Upload your PDFs to an Azure Blob Storage container. <br/>
+> 2. An Azure Function is triggered by the upload, which uses an Open Framework, and multiple customizations as part of an API call to analyze the PDFs.  <br/>
+> 3. The extracted data is parsed and subsequently stored in a Cosmos DB database, ensuring a seamless and automated workflow from document upload to data storage. 
 
 > [!NOTE]
 > Limitations of this approach: <br/>
