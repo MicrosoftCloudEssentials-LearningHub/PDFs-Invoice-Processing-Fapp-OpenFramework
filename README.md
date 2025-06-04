@@ -120,7 +120,7 @@ Last updated: 2025-05-20
 
 ## Where to start? 
 
-This is an introductory workshop on Microsoft Fabric. Please follow as described below.
+> Please follow as described below.
 
 - If you're choosing the `Infrastructure via Azure Portal`, please start [here in this section](#step-1-set-up-your-azure-environment).
 - If you're choosing the `Infrastructure via Terraform` approach:
