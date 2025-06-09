@@ -32,7 +32,7 @@ Last updated: 2025-05-20
 - [Where to start?](#where-to-start)
 - [Important Considerations for Production Environment](#important-considerations-for-production-environment)
 - [Overview](#overview)
-  - [Function App Hosting Options](#function-app-hosting-options)
+- [Function App Hosting Options](#function-app-hosting-options)
 - [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
 - [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
 - [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
@@ -144,17 +144,94 @@ Last updated: 2025-05-20
 | **Azure SQL Database**    | Use if your data is highly structured and you need complex queries and transactions.                                  |
 | **Azure Cosmos DB**       | Use if you need a globally distributed database with low latency and the ability to handle semi-structured data.      |
 
-### Function App Hosting Options 
+## Function App Hosting Options 
 
 > In the context of Azure Function Apps, a `hosting option refers to the plan you choose to run your function app`. This choice affects how your function app is scaled, the resources available to each function app instance, and the support for advanced functionalities like virtual network connectivity and container support.
 
-| **Plan**                | **Scale to Zero** | **Scale Behavior**                     | **Virtual Networking** | **Dedicated Compute & Reserved Cold Start** | **Max Scale Out (Instances)** | **Example AI Use Cases**                                                                 |
-|-------------------------|-------------------|----------------------------------------|------------------------|---------------------------------------------|--------------------------------|------------------------------------------------------------------------------------------|
-| **Flex Consumption**    | `Yes`             | `Fast event-driven`                    | `Optional`             | `Optional (Always Ready)`                   | `1000`                         | `Real-time data processing` for AI models, `high-traffic AI-powered APIs`, `event-driven AI microservices`. Use for applications needing to process large volumes of data in real-time, such as AI models for fraud detection or real-time recommendation systems. Ideal for deploying APIs that serve AI models, such as natural language processing (NLP) or computer vision services, which require rapid scaling based on demand. |
-| **Consumption**         | `Yes`             | `Event-driven`                         | `Optional`             | `No`                                        | `200`                          | `Lightweight AI APIs`, `scheduled AI tasks`, `low-traffic AI event processing`. Suitable for deploying lightweight AI services, such as sentiment analysis or simple image recognition, which do not require extensive resources. Perfect for running periodic AI tasks, like batch processing of data for machine learning model training or scheduled data analysis. |
-| **Functions Premium**   | `No`              | `Event-driven with premium options`    | `Yes`                  | `Yes`                                       | `100`                          | `Enterprise AI applications`, AI services requiring `VNet integration`, `low-latency AI APIs`. Use for mission-critical AI applications that require high availability, low latency, and integration with virtual networks, such as AI-driven customer support systems or advanced analytics platforms. Ideal for AI services that need to securely connect to on-premises resources or other Azure services within a virtual network. |
-| **App Service**         | `No`              | `Dedicated VMs`                        | `Yes`                  | `Yes`                                       | `Varies`                       | `AI-powered web applications` with integrated functions, AI applications needing `dedicated resources`. Great for web applications that incorporate AI functionalities, such as personalized content delivery, chatbots, or interactive AI features. Suitable for AI applications that require dedicated compute resources for consistent performance, such as intensive data processing or complex AI model inference. |
-| **Container Apps Env.** | `No`              | `Containerized microservices environment` | `Yes`                  | `Yes`                                       | `Varies`                       | `AI microservices architecture`, containerized AI workloads, `complex AI event-driven workflows`. Perfect for building a microservices architecture where each service can be independently scaled and managed, such as a suite of AI services for different tasks (e.g., image processing, text analysis). Ideal for deploying containerized AI workloads that need to run in a managed environment, such as machine learning model training and deployment pipelines. Suitable for orchestrating complex workflows involving multiple AI services and event-driven processes, such as automated data pipelines and real-time analytics. |
+> [!TIP]  
+> - `Scale to Zero`: Indicates whether the service can automatically scale down to zero instances when idle.  
+>   - **IDLE** stands for:  
+>     - **I** – Inactive  
+>     - **D** – During  
+>     - **L** – Low  
+>     - **E** – Engagement  
+>   - In other words, when the application is not actively handling requests or events (it's in a low-activity or paused state).
+> - `Scale Behavior`: Describes how the service scales (e.g., `event-driven`, `dedicated`, or `containerized`).  
+> - `Virtual Networking`: Whether the service supports integration with virtual networks for secure communication.  
+> - `Dedicated Compute & Reserved Cold Start`: Availability of always-on compute to avoid cold starts and ensure low latency.  
+> - `Max Scale Out (Instances)`: Maximum number of instances the service can scale out to.  
+> - `Example AI Use Cases`: Real-world scenarios where each plan excels.
+
+
+<details>
+<summary><strong>Flex Consumption</strong></summary>
+
+| Feature | Description |
+|--------|-------------|
+| **Scale to Zero** | `Yes` |
+| **Scale Behavior** | `Fast event-driven` |
+| **Virtual Networking** | `Optional` |
+| **Dedicated Compute & Reserved Cold Start** | `Optional (Always Ready)` |
+| **Max Scale Out (Instances)** | `1000` |
+| **Example AI Use Cases** | `Real-time data processing` for AI models, `high-traffic AI-powered APIs`, `event-driven AI microservices`. Ideal for fraud detection, real-time recommendations, NLP, and computer vision services. |
+
+</details>
+
+<details>
+<summary><strong>Consumption</strong></summary>
+
+| Feature | Description |
+|--------|-------------|
+| **Scale to Zero** | `Yes` |
+| **Scale Behavior** | `Event-driven` |
+| **Virtual Networking** | `Optional` |
+| **Dedicated Compute & Reserved Cold Start** | `No` |
+| **Max Scale Out (Instances)** | `200` |
+| **Example AI Use Cases** | `Lightweight AI APIs`, `scheduled AI tasks`, `low-traffic AI event processing`. Great for sentiment analysis, simple image recognition, and batch ML tasks. |
+
+</details>
+
+<details>
+<summary><strong>Functions Premium</strong></summary>
+
+| Feature | Description |
+|--------|-------------|
+| **Scale to Zero** | `No` |
+| **Scale Behavior** | `Event-driven with premium options` |
+| **Virtual Networking** | `Yes` |
+| **Dedicated Compute & Reserved Cold Start** | `Yes` |
+| **Max Scale Out (Instances)** | `100` |
+| **Example AI Use Cases** | `Enterprise AI applications`, `low-latency AI APIs`, `VNet integration`. Ideal for secure, high-performance AI services like customer support and analytics. |
+
+</details>
+
+<details>
+<summary><strong>App Service</strong></summary>
+
+| Feature | Description |
+|--------|-------------|
+| **Scale to Zero** | `No` |
+| **Scale Behavior** | `Dedicated VMs` |
+| **Virtual Networking** | `Yes` |
+| **Dedicated Compute & Reserved Cold Start** | `Yes` |
+| **Max Scale Out (Instances)** | `Varies` |
+| **Example AI Use Cases** | `AI-powered web applications`, `dedicated resources`. Great for chatbots, personalized content, and intensive AI inference. |
+
+</details>
+
+<details>
+<summary><strong>Container Apps Env.</strong></summary>
+
+| Feature | Description |
+|--------|-------------|
+| **Scale to Zero** | `No` |
+| **Scale Behavior** | `Containerized microservices environment` |
+| **Virtual Networking** | `Yes` |
+| **Dedicated Compute & Reserved Cold Start** | `Yes` |
+| **Max Scale Out (Instances)** | `Varies` |
+| **Example AI Use Cases** | `AI microservices architecture`, `containerized AI workloads`, `complex AI workflows`. Ideal for orchestrating AI services like image processing, text analysis, and real-time analytics. |
+
+</details>
 
 ## Step 1: Set Up Your Azure Environment
 
