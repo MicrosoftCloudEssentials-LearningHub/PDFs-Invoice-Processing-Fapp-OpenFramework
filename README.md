@@ -8,7 +8,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-05-20
+Last updated: 2025-07-16
 
 ----------
 
@@ -151,6 +151,7 @@ Last updated: 2025-05-20
 > In the context of Azure Function Apps, a `hosting option refers to the plan you choose to run your function app`. This choice affects how your function app is scaled, the resources available to each function app instance, and the support for advanced functionalities like virtual network connectivity and container support.
 
 > [!TIP]  
+>
 > - `Scale to Zero`: Indicates whether the service can automatically scale down to zero instances when idle.  
 >   - **IDLE** stands for:  
 >     - **I** – Inactive  
@@ -163,7 +164,6 @@ Last updated: 2025-05-20
 > - `Dedicated Compute & Reserved Cold Start`: Availability of always-on compute to avoid cold starts and ensure low latency.  
 > - `Max Scale Out (Instances)`: Maximum number of instances the service can scale out to.  
 > - `Example AI Use Cases`: Real-world scenarios where each plan excels.
-
 
 <details>
 <summary><strong>Flex Consumption</strong></summary>
@@ -731,7 +731,9 @@ If you need further assistance with the code, please click [here to view all the
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/28bba46b-eaf0-4bbc-a565-f7c1ad8a0ac6">
 
+<!-- START BADGE -->
 <div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+  <img src="https://img.shields.io/badge/Total%20views-10-limegreen" alt="Total views">
+  <p>Refresh Date: 2025-07-16</p>
 </div>
+<!-- END BADGE -->
