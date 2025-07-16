@@ -151,6 +151,7 @@ Last updated: 2025-05-20
 > In the context of Azure Function Apps, a `hosting option refers to the plan you choose to run your function app`. This choice affects how your function app is scaled, the resources available to each function app instance, and the support for advanced functionalities like virtual network connectivity and container support.
 
 > [!TIP]  
+>
 > - `Scale to Zero`: Indicates whether the service can automatically scale down to zero instances when idle.  
 >   - **IDLE** stands for:  
 >     - **I** – Inactive  
@@ -163,7 +164,6 @@ Last updated: 2025-05-20
 > - `Dedicated Compute & Reserved Cold Start`: Availability of always-on compute to avoid cold starts and ensure low latency.  
 > - `Max Scale Out (Instances)`: Maximum number of instances the service can scale out to.  
 > - `Example AI Use Cases`: Real-world scenarios where each plan excels.
-
 
 <details>
 <summary><strong>Flex Consumption</strong></summary>
