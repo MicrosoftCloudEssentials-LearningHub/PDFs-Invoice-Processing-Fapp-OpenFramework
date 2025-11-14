@@ -11,8 +11,6 @@ Last updated: 2025-09-17
 
 ----------
 
-> A landing zone is a general `cloud framework that sets up the core structure for all workloads`. Each use case (like an app, data pipeline, or API) then builds on top of this framework, using the `same environments (Dev → Test → UAT → Prod) and CI/CD pipelines to move code safely into production.` It’s general by design, but `applied per use case.`
-
 > [!IMPORTANT]
 > This example is based on a `public network site and is intended for demonstration purposes only`. It showcases how several Azure resources can work together to achieve the desired result. Consider the section below about [Important Considerations for Production Environment](#important-considerations-for-production-environment). Please note that `these demos are intended as a guide and are based on my personal experiences. For official guidance, support, or more detailed information, please refer to Microsoft's official documentation or contact Microsoft directly`: [Microsoft Sales and Support](https://support.microsoft.com/contactus?ContactUsExperienceEntryPointAssetId=S.HP.SMC-HOME)
 
@@ -84,6 +82,38 @@ Last updated: 2025-09-17
 - [Step 5: Test the solution](#step-5-test-the-solution)
 
 </details>
+
+> `How we move from basic coding all the way to AI agents?`
+
+```mermaid
+flowchart LR
+    A[Scripting: Line-by-line instructions] --> B[Machine Learning: Packages + statistical foundations]
+    B --> C[LLMs: Reasoning, understanding, human-like responses]
+    C --> D[Agents: LLMs with ability to act]
+
+    %% Styling
+    classDef step fill:#4a90e2,stroke:#333,stroke-width:2px,color:#fff,font-weight:bold;
+    class A,B,C,D step;
+
+    %% Extra notes
+    A:::step
+    B:::step
+    C:::step
+    D:::step
+```
+
+<details>
+<summary><b> More details about it here </b> (Click to expand)</summary>
+  
+> - We all `start with scripting`, no matter the language, it’s the first step. `Simple/complex instructions, written line by line`, to get something done
+> - Then comes `machine learning`. At this stage, we’re not reinventing the math, we’re `leveraging powerful packages built on deep statistical and mathematical foundations.` These tools let us `automate smarter processes, like reviewing claims with predictive analytics. You’re not just coding anymore; you’re building systems that learn and adapt.`
+> - `LLMs`. This is what most people mean when they say `AI.` Think of `yourself as the architect, and the LLM as your strategic engine. You can plug into it via an API, a key, or through integrated services. It’s not just about automation, it’s about reasoning, understanding, and generating human-like responses.`
+> - And finally, `agents`. These are LLMs with the `ability to act`. They don’t just respond, `they take initiative. They can create code, trigger workflows, make decisions, interact with tools, with other agents. It’s where intelligence meets execution`
+
+</details>
+
+> [!NOTE]
+> A landing zone is a general `cloud framework that sets up the core structure for all workloads`. Each use case (like an app, data pipeline, or API) then builds on top of this framework, using the `same environments (Dev → Test → UAT → Prod) and CI/CD pipelines to move code safely into production.` It’s general by design, but `applied per use case.`
 
 > How to parse PDFs from an Azure Storage Account, process them using a Open Framework (needs manual configuration), and store the results in Cosmos DB for further analysis. <br/> <br/>
 >
